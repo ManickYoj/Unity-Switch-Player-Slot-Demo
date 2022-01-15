@@ -12,4 +12,4 @@ Steps to create scene:
 4. Convert to New Unity Input System
 5. Add driving script
 6. Add turret rotate script
-7. Add Slot, Slot Controller, and Slot Registry scripts
+7. Add Receiver, Transmitter, and Registry scripts
