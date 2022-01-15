@@ -1,4 +1,4 @@
-# Tank Slot Swap Demo
+# Switching Player Control Demo
 
 Dependencies:
 - [Gridbox Prototype Materials](https://assetstore.unity.com/packages/2d/textures-materials/gridbox-prototype-materials-129127)
