@@ -14,7 +14,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "SwitchSlot",
+                    "name": "SwitchReceiver",
                     "type": "Button",
                     "id": "3c023a9d-c0ae-4994-afc5-b5776908646f",
                     "expectedControlType": "Button",
@@ -162,7 +162,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "SwitchSlot",
+                    "action": "SwitchReceiver",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

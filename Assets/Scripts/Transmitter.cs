@@ -6,35 +6,35 @@ using UnityEngine.InputSystem;
 // Must be placed on the designated player prefab that is spawned
 // in by the multiplayer manager in order to be owned by the client
 [RequireComponent(typeof(PlayerInput))]
-public class SlotController : MonoBehaviour {
-  private Slot slot;
+public class Transmitter : MonoBehaviour {
+  private Receiver receiver;
   private PlayerInput playerInput;
 
   void Start() {
     this.playerInput = this.GetComponent<PlayerInput>();
     this.playerInput.enabled = true;
-    SlotRegistry.Instance.GetNewSlot(this);
+    Registry.GetNewReceiver(this);
   }
 
-  public void Connect(Slot slot) {
+  public void Connect(Receiver receiver) {
     foreach(Camera c in Camera.allCameras) c.gameObject.SetActive(false);
-    this.slot = slot;
-    this.slot.slotCamera.gameObject.SetActive(true);
+    this.receiver = receiver;
+    this.receiver.receiverCamera.gameObject.SetActive(true);
   }
 
-  public void Disconnect(Slot slot) {
-    slot.SendCommand("OnDisconnect");
+  public void Disconnect(Receiver receiver) {
+    receiver.SendCommand("OnDisconnect");
   }
 
-  public void OnSwitchSlot(InputValue inputValue) {
-    SlotRegistry.Instance.GetNewSlot(this);
+  public void OnSwitchReceiver(InputValue inputValue) {
+    Registry.GetNewReceiver(this);
   }
 
   public void OnMove(InputValue inputValue) {
-    if (slot != null) slot.SendCommand("OnMove", inputValue.Get<Vector2>());
+    if (receiver != null) receiver.SendCommand("OnMove", inputValue.Get<Vector2>());
   }
 
   public void OnFire(InputValue inputValue) {
-    if (slot != null) slot.SendCommand("OnFire");
+    if (receiver != null) receiver.SendCommand("OnFire");
   }
 }

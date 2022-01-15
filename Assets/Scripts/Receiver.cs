@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
-public class Slot : MonoBehaviour {
-  public Camera slotCamera;
+public class Receiver : MonoBehaviour {
+  public Camera receiverCamera;
   public GameObject[] listeners;
 
   public void SendCommand(string cmd, object val = null) {
